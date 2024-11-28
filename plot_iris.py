@@ -17,10 +17,12 @@ plt.subplot(2, 1, 2)
 for i in range(3):
     mask = y == i
     plt.scatter(X[mask, 0], X[mask, 1], label=iris.target_names[i])
+    print(i)
 plt.xlabel('Lunghezza sepalo')
 plt.ylabel('Larghezza sepalo')
 plt.title('Distribuzione dei Sepali')
 plt.legend()
+
 plt.subplot(2, 1, 1)
 for i in range(3):
     mask = y == i
@@ -36,3 +38,5 @@ plt.legend()
 # Poi fai commit e push
 
 plt.show()
+
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=22)
